@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-with, inital-scel=1.0">
+        <title>mockVue</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>差值表达式</h1>
+            <h3>{{ msg }}</h3>
+            <h3>{{ count }}</h3>
+            <h1>v-text</h1>
+            <div v-text="msg"></div>
+            <h1>v-model</h1>
+            <h1>v-html</h1>
+            <h3 v-html="html"></h3>
+            <input type="text" v-model="msg">
+            <input type="text" v-model="count">
+            <input type="text" v-modal="html" />
+            <h1>v-on:click--alert(hello-vue)</h1>
+            <h3 v-on:click="handleClick">点我有惊喜</h3>
+            <button v-on:mouseenter="handleMouseEnter" v-on:mouseleave="handleMouseLeave">移入变色</button>
+        </div>
+        <script src="./js/Dep.js"></script>
+        <script src="./js/Wather.js"></script>
+        <script src="./js/Compiler.js"></script>
+        <script src="./js/Observer.js"></script>
+        <script src="./js/Vue.js"></script>
+        <script>
+        let vm = new Vue({
+            el: '#app',
+            data:{
+                msg: 'Hello Vue',
+                count: 100,
+                perpose:{
+                    name: 'zs'
+                }
+            } ,
+            methods:{
+                handleClick: () =>{
+                    alert('hello-mini-vue')
+                },
+                handleMouseEnter: (e) =>{
+                    e.target.style.color = 'red'
+                },
+                handleMouseLeave: (e) =>{
+                    e.target.style.color = 'green'
+                }
+            }
+        })
+
+        console.log(vm.msg)
+        // vm.msg = {test: 'Hello'}
+        </script>
+    </body>
+
+</html>
